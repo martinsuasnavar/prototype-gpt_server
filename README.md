@@ -1,7 +1,12 @@
-# HOW TO TRAIN THE MODEL
+---
+title: Prototype GPT Server
+emoji: 🤖
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_file: app.py
+pinned: false
+---
 
-1) Execute push-dataset.py
-2) Execute train.py
-
-The bigger TRAIN_STEPS value is, the longer it takes to train the model in each step. 
-GPU recommended to accelerate training processes.
+# AI Project Server
+Your existing README text can continue right here...
