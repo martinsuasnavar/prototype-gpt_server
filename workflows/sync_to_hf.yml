@@ -1,0 +1,37 @@
+name: Sync to Hugging Face Spaces
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout local repository code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push codebase to Hugging Face Hub
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          # 1. Completely nuke the local git history cache inside the runner container
+          rm -rf .git
+          
+          # 2. Re-initialize a temporary clean git tree from scratch
+          git init
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          
+          # 3. Physically shred the heavy binary checkpoints folder before it can touch HF
+          rm -rf checkpoints/
+          
+          # 4. Stage and commit only the raw, lightweight code files (.py, .json, etc.)
+          git add .
+          git commit -m "Deploy production codebase without historical binaries"
+          
+          # 5. Force push this single, clean commit straight to your Space
+          git push --force https://martinsuasnavar:$HF_TOKEN@huggingface.co/spaces/martinsuasnavar/prototype-gpt-server main

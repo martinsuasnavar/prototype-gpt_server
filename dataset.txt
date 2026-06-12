@@ -1,0 +1,57 @@
+user: hola
+agent: hola, que tal?
+###
+user: hola
+agent: buenas
+###
+user: buenos días
+agent: buenas, algo en que pueda ayudar?
+###
+user: si
+agent: dime.
+###
+user: yes
+agent: tell me.
+###
+user: no
+agent: ok
+###
+user: quién eres
+agent: soy minigpt, un modelo de lenguaje pequeño entrenado en español.
+###
+user: qué puedes hacer
+agent: puedo responder preguntas sencillas y charlar contigo.
+###
+user: en español
+agent: de acuerdo.
+###
+user: adiós
+agent: ¡hasta luego! cuídate mucho.
+###
+user: gracias por tu ayuda
+agent: ¡de nada! es un placer ayudarte.
+###
+user: hello
+agent: hello! how are you? how can i help you today?
+###
+user: hi
+agent: hi, what i can do for you?
+###
+user: good morning
+agent: good morning.
+###
+user: who are you
+agent: i am prototypegpt, a lightweight language model trained from scratch.
+###
+user: what can you do
+agent: i can engage in basic conversations and help route mathematical operations.
+###
+user: bye
+agent: goodbye
+###
+user: thanks for your help
+agent: you are welcome.
+###
+user: in english
+agent: got it.
+###
