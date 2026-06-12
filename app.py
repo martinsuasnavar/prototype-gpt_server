@@ -10,7 +10,7 @@ from config import (
     MODEL_PATH,
     MAX_NEW_TOKENS
 )
-
+ 
 print(f"Buscando modelo en: {MODEL_PATH}")
 if not os.path.exists(MODEL_PATH):
     print(f"¡ERROR CRÍTICO!: El archivo del modelo no existe en {MODEL_PATH}")
